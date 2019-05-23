@@ -24,11 +24,14 @@ console.log('escuchando en el puerto 3000!');
 var home = 0;
 var sobreNosotros = 0;
 var contacto = 0;
+var fecha= new Date();
 
 //funcion para guardar numero visitas en archivo
 function contarVisitas() {
 
-    var mensaje= "Pagina inicio:"+ home + "visitas \n" + "Sobre nosotros: " + sobreNosotros+ "visitas \n"+ "Contacto:" + contacto + "visitas";
+    var mensaje= "Pagina inicio:"+ home + "fecha:"+ fecha+ "\n" 
+    + "Sobre nosotros: " + sobreNosotros+ "fecha:"+ fecha+ "\n"+ 
+    "Contacto:" + contacto + "fecha:"+ fecha ;
  
     console.log("Home Page: "+home+" visitas");
     console.log("sobre nosotros: "+sobreNosotros+" visitas");
@@ -73,6 +76,20 @@ app.get('/contacto', function (request, response) {
     response.render('contacto', contexto);
     contacto++;
     contarVisitas();
+
+
+});
+
+app.get('/admin', function (request, response) {
+    var contexto={
+        home,
+        sobreNosotros,
+        contacto,
+
+        layout:false
+    };
+    response.render('admin', contexto);
+   
 
 
 });
