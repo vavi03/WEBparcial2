@@ -19,3 +19,25 @@ app.set('view engine', 'handlebars');
 // iniciar el servidor
 app.listen(3000);
 console.log('escuchando en el puerto 3000!');
+
+//contadores
+var home = 0;
+var sobreNosotros = 0;
+var contacto = 0;
+
+//funcion para guardar numero visitas en archivo
+function contarVisitas() {
+
+    var mensaje= "Pagina inicio:"+ home + "visitas \n" + "Sobre nosotros: " + sobreNosotros+ "visitas \n"+ "Contacto:" + contacto + "visitas";
+ 
+    console.log("Home Page: "+home+" visitas");
+    console.log("sobre nosotros: "+sobreNosotros+" visitas");
+    console.log("contacto: "+contacto+" visitas");
+    
+
+    fs.writeFile('message.txt', mensaje, function (err) {
+        if (err) throw err;
+        console.log('Guardado!');
+      });
+
+}
