@@ -29,9 +29,9 @@ var fecha= new Date();
 //funcion para guardar numero visitas en archivo
 function contarVisitas() {
 
-    var mensaje= "Pagina inicio:"+ home + "fecha:"+ fecha+ "\n" 
-    + "Sobre nosotros: " + sobreNosotros+ "fecha:"+ fecha+ "\n"+ 
-    "Contacto:" + contacto + "fecha:"+ fecha ;
+    var mensaje= "Pagina inicio:"+ home + "   fecha:"+ fecha+ "\n" 
+    + "Sobre nosotros: " + sobreNosotros+ "   fecha:"+ fecha+ "\n"+ 
+    "Contacto:" + contacto + "   fecha:"+ fecha ;
  
     console.log("Home Page: "+home+" visitas");
     console.log("sobre nosotros: "+sobreNosotros+" visitas");
