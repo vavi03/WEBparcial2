@@ -41,3 +41,38 @@ function contarVisitas() {
       });
 
 }
+
+app.get('/', function (request, response) {
+
+    var contexto={
+        layout:false
+    };
+
+    response.render('home', contexto);
+    home++;
+    contarVisitas();
+
+
+});
+
+app.get('/sobreNosotros', function (request, response) {
+    var contexto={
+        layout:false
+    };
+    response.render('nosotros', contexto);
+    sobreNosotros++;
+    contarVisitas();
+
+
+});
+
+app.get('/contacto', function (request, response) {
+    var contexto={
+        layout:false
+    };
+    response.render('contacto', contexto);
+    contacto++;
+    contarVisitas();
+
+
+});
